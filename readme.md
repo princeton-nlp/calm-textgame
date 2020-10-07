@@ -1,7 +1,7 @@
 # CALM
 
 ## Overview
-Code and data for paper **Keep CALM and Explore: Language Models for Action Generation in Text-based Games** at EMNLP 2020.
+Code and data for paper [Keep CALM and Explore: Language Models for Action Generation in Text-based Games](https://arxiv.org/pdf/2010.02903.pdf) at EMNLP 2020.
 
 * ``games/``: 28 Jericho game files
 * ``lm/``: GPT and n-gram CALM models
