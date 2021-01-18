@@ -12,7 +12,7 @@ The data consists of 223,527 context-action pairs in the format `[CLS] observati
 
 ```bash
 pip install torch==1.4 transformers==2.5.1 jericho fasttext wandb importlib_metadata
-git clone https://github.com/princeton-nlp/calm && cd calm
+git clone https://github.com/princeton-nlp/calm-textgame && cd calm-textgame
 ln -s ../lm calm && ln -s ../lm drrn
 ```
 
@@ -33,6 +33,12 @@ cd ../drrn
 python train.py --rom_path ../games/${GAME} --lm_path ${PATH_TO_CALM} --lm_type ${gpt_or_ngram}
 ```
 
+- To quickly try out the GPT-2 CALM model:
+```python
+from lm import GPT2LM
+model = GPT2LM("model_weights/gpt2")
+print(model.generate("[CLS] observation [SEP] action [SEP] next observation [SEP]", k=30))
+```
 ## Citation
 ```
 @inproceedings{yao2020calm,
