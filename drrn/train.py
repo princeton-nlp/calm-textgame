@@ -69,7 +69,7 @@ def train(agent, lm, envs, max_steps, update_freq, eval_freq, checkpoint_freq, l
                 if env.max_score >= max_score:  # put in alpha queue
                     for transition in transitions[i]:
                         agent.observe(transition, is_prior=True)
-                env_steps += info['moves']
+                env_steps += infos[i]['moves']
                 ob, info = env.reset()
                 action_strs[i], action_ids[i], transitions[i] = 'reset', [], []
                 next_obs, next_rewards, next_dones, next_infos = next_obs + [ob], next_rewards + [0], next_dones + [
