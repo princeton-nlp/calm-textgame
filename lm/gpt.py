@@ -33,7 +33,7 @@ class GPT2LM(BaseLM):
     def generate(self, input, k, mask_out=ILLEGAL_ACTIONS + NO_EFFECT_ACTIONS, key=None):
         input_ids = self.sent2ids(input) if isinstance(input, str) else input
         if key is None:
-            key = hash(tuple(tuple(input_ids), k))
+            key = hash((tuple(input_ids), k))
         if key in self.generate_dict:
             return self.generate_dict[key]
         input_len = len(input_ids)
